@@ -1,17 +1,15 @@
 #include <Arduino.h>
+#include "led.h"
 
-#define LED 2
+LED *obj_LED;
 
 void setup() {
-  // put here your main code, to run once.
-  //Serial.begin()
-  pinMode(LED, OUTPUT);
+
+  obj_LED = new LED();
+  obj_LED->LED_init(); 
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-  digitalWrite(LED, HIGH);
-  delay(1000);
-  digitalWrite(LED, LOW);
-  delay(1000);
+
+  obj_LED->LED_HeartBeat();
 }
